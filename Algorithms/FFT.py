@@ -10,6 +10,7 @@ def DIT_FFT(x):
     T= [cmath.exp(-2j*cmath.pi*k/N)*odd[k] for k in range(N//2)]
     return [even[k] + T[k] for k in range(N//2)] + [even[k] - T[k] for k in range(N//2)]
 
+# Function to calculate the DIF-FFT
 def DIFFT(x):
     N = len(x)
     if N <= 1: return x
@@ -18,13 +19,16 @@ def DIFFT(x):
     T= [cmath.exp(2j*cmath.pi*k/N)*odd[k] for k in range(N//2)]
     return [even[k] + T[k] for k in range(N//2)] + [even[k] - T[k] for k in range(N//2)]
 
-XK = DIT_FFT([1,2,3,4,5,6,7,8])
+a = input ("Enter elements of n: ")
+x = list(map(int, a.split()))
+
+XK = DIT_FFT(x)
 for i in range(8):
     print(XK[i])
 print()
 
-XK = DIT_FFT([1,2,3,4,5,6,7,8])
-for i in range(8):
-    print(XK[i])
-print()
+# XK = DIT_FFT([1,2,3,4,5,6,7,8])
+# for i in range(8):
+#     print(XK[i])
+# print()
     
